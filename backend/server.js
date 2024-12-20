@@ -27,7 +27,7 @@ async function main() {
 
 
 const corsOptions = {
-  origin: 'https://kaamkaro56.vercel.app/', // Allow this specific origin
+  origin: 'https://kaamkaroo.vercel.app/', // Allow this specific origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
   credentials: true, // Allow cookies if needed
 };
