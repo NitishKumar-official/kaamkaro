@@ -26,14 +26,19 @@ async function main() {
 }
 
 
-const corsOptions = {
-  origin: 'https://kaamkaroo.vercel.app/', // Allow this specific origin
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
-  credentials: true, // Allow cookies if needed
-};
 
-// Use CORS middleware
-app.use(cors(corsOptions));
+// Middleware
+app.use(
+  cors({
+    origin: "https://kaamkaroo.vercel.app", // Specify your frontend's Vercel domain
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS method
+    credentials: true, // Allow credentials (cookies)
+    allowedHeaders: ['Content-Type', 'Authorization'] // Explicitly allow headers
+  })
+);
+
+app.options('*', cors()); // Ensure OPTIONS method is handled
+
 
 app.use(bodyParser.json());
 app.use("/api/users", userRoutes); // Your user routes for login and OTP
