@@ -110,7 +110,7 @@ const VerifyOtp = ({ phone }) => {
   const resendOtp = async () => {
     setIsResending(true);
     try {
-      await axios.post("http://localhost:8000/api/users/resend-otp", { phone });
+      await axios.post("https://kaamkaro-phi.vercel.app/api/users/resend-otp", { phone });
       alert("A new OTP has been sent to your phone.");
     } catch (error) {
       alert(error.response?.data?.message || "Error resending OTP");
