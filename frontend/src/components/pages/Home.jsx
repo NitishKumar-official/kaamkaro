@@ -20,7 +20,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <><Header/>
+    // <><Header/>
     <div className="bg-gradient-to-b from-blue-50 to-white min-h-screen flex flex-col items-center">
       {/* Header */}
       {/* <header className="w-full flex justify-between items-center px-6 py-4">
