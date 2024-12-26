@@ -10,11 +10,14 @@ import Wishlist from './components/pages/HomeCompo/Wishlist';
 import HelpCenter from './components/pages/HomeCompo/ProfileCompo/HelpCenter';
 import PrivacyPolicy from './components/pages/HomeCompo/ProfileCompo/PrivacyPolicy';
 import TermsCondition from './components/pages/HomeCompo/ProfileCompo/TermsCondition';
+import SignIn from './components/pages/SignIn';
+
 
 const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<SignIn/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/home" element={<Home />} />
         <Route path="/wishlist" element={<Wishlist />} />
