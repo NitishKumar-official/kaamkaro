@@ -75,8 +75,23 @@ const Register = () => {
     if (!validateForm()) return;
   
     try {
+
+      //localhost
+
+      // const response = await axios.post(
+      //   "http://localhost:8000/api/users/register",
+      //   formData, // Send the plain JSON object
+      //   {
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //   }
+      // );
+
+      //online
+
       const response = await axios.post(
-        "http://localhost:8000/api/users/register",
+        "https://kaamkaro-phi.vercel.app/api/users/register",
         formData, // Send the plain JSON object
         {
           headers: {
