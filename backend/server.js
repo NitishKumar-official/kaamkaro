@@ -5,6 +5,7 @@ import cors from "cors";
 import userRoutes from "./routes/userRoutes.js";
 import mongoose from "mongoose";
 
+
 dotenv.config();
 
 const app = express();
@@ -30,7 +31,8 @@ async function main() {
 // Middleware
 app.use(
   cors({
-    origin: "https://kaamkaroo.vercel.app", // Specify your frontend's Vercel domain
+    origin: " http://localhost:5173",
+    // origin: "https://kaamkaroo.vercel.app", // Specify your frontend's Vercel domain
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS method
     credentials: true, // Allow credentials (cookies)
     allowedHeaders: ['Content-Type', 'Authorization'] // Explicitly allow headers
@@ -42,6 +44,7 @@ app.options('*', cors()); // Ensure OPTIONS method is handled
 
 app.use(bodyParser.json());
 app.use("/api/users", userRoutes); // Your user routes for login and OTP
+
 
 // Start server
 const PORT = process.env.PORT || 5000;

@@ -15,11 +15,16 @@ const Login = ({ setPhone, setIsOtpSent }) => {
     setIsLoading(true);
     try {
       // Make POST request to send OTP
-      await axios.post(
-        "https://kaamkaro-phi.vercel.app/api/users/login",
+      await axios.post("https://kaamkaro-phi.vercel.app/api/users/login",
         { phone },
         { withCredentials: true } // Ensure cookies are included (if needed)
       );
+      
+      //for localhost
+      // await axios.post("http://localhost:8000/api/users/login",
+      //   { phone },
+      //   { withCredentials: true } // Ensure cookies are included (if needed)
+      // );
       setPhone(phone);
       setIsOtpSent(true);
     } catch (error) {
