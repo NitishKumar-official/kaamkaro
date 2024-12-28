@@ -32,7 +32,7 @@ async function main() {
 app.use(
   cors({
     // origin: " http://localhost:5173",
-    origin: "https://commerceweb.vercel.app/", // Specify your frontend's Vercel domain
+    origin: "https://commerceweb.vercel.app", // Specify your frontend's Vercel domain
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Include OPTIONS method
     credentials: true, // Allow credentials (cookies)
     allowedHeaders: ['Content-Type', 'Authorization'] // Explicitly allow headers
